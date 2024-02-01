@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <!--数据库驱动路径 -->
+    <classPathEntry
+            location="D:\SoftDevelop\MvnStore\repository\com\ruomm\orcale\ojdbc6\11.2.0.4\ojdbc6-11.2.0.4.jar"/>
+    <context id="DB2Tables" targetRuntime="MyBatis3" defaultModelType="flat">
+        <!--自定义插件工具-->
+        <plugin type="com.ruomm.assistx.dbgenerate.parse.RuommPluginAdapter">
+            <!-- 是否生成getter方法，默认true-->
+            <property name="isGetter" value="true"/>
+            <!-- 是否生成setter方法，默认true-->
+            <property name="isSetter" value="true"/>
+            <!-- 是否生成toString方法，默认true -->
+            <property name="isToString" value="true"/>
+            <!--是否使用自定义GeneratorHelper辅助类，空的话不使用-->
+            <property name="generatorHelper" value="com.ruomm.assistx.dbgenerate.DemoGeneratorHelper"/>
+        </plugin>
+        <!--自定义生成工具类，系统默认的生成工具类为org.mybatis.generator.internal.DefaultCommentGenerator-->
+        <commentGenerator type="com.ruomm.assistx.dbgenerate.parse.RuommGenerator">
+            <!-- 是否取消注释 -->
+            <property name="suppressAllComments" value="false"/>
+            <!-- 数据库注释支持 -->
+            <property name="addRemarkComments" value="true"/>
+            <!-- 时间格式设置 -->
+            <property name="dateFormat" value="yyyy-MM-dd HH:mm:ss"/>
+            <!-- 是否使用lombok插件来生成getter、setter、toString方法，默认false -->
+            <property name="useLombok" value="false"/>
+            <!-- 是否生成@Id、@Column、@Table注解，默认false -->
+            <property name="dbAnnotation" value="true"/>
+            <!-- 生成@Column的注解是否添加length属性，默认false -->
+            <property name="dbColumnLength" value="true"/>
+            <!-- 是否添加hibernate的@DynamicUpdate注解，默认false -->
+            <property name="hibernateAnnotation" value="false"/>
+            <!--是否使用自定义GeneratorHelper辅助类，空的话不使用-->
+            <property name="generatorHelper" value="com.ruomm.assistx.dbgenerate.DemoGeneratorHelper"/>
+
+        </commentGenerator>
+
+        <!--JDBC数据库连接-->
+        <jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
+                        connectionURL="jdbc:oracle:thin:@dbdev93:1521:posp"
+                        userId="ruomm" password="123456">
+            <!-- MySQL解决不同用户下相同表名的问题 -->
+            <property name="nullCatalogMeansCurrent" value="true"/>
+            <!--MySQL 注解启用 -->
+            <!-- <property name="useInformationSchema" value="true"></property> -->
+            <!--Oracle  注解启用 -->
+            <property name="remarksReporting" value="true"></property>
+        </jdbcConnection>
+        <!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer，为 true时把JDBC DECIMAL 和
+            NUMERIC 类型解析为java.math.BigDecimal -->
+        <!--数据库转JAVA类型转换器。
+            forceBigDecimals默认false，依据长度和小数位数解析为JAVA的Integer、Long、BigDecimal类型。
+            forceBigDecimals值为true时候，强制解析为JAVA的BigDecimal类型-->
+        <javaTypeResolver type="com.ruomm.assistx.dbgenerate.parse.RuommTypeResolver">
+            <!-- 是否强制为BigBigDecimal类型，默认false-->
+            <property name="forceBigDecimals" value="false"/>
+            <!-- 是否转换number类型为string类型，默认false-->
+            <property name="transNumberToString" value="false"/>
+            <!-- 是否强制转换short类型Integer类型，默认true -->
+            <property name="forceInteger" value="true"/>
+            <!-- 时间格式是否使用java类型，默认false -->
+            <property name="timeJavaMode" value="false"/>
+        </javaTypeResolver>
+        <!--域模型层,生成的目标包,项目目标源文件 -->
+        <javaModelGenerator targetPackage="com.ruomm.entry"
+                            targetProject="D:\temp\dbgenerate\ruomm">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+        <!--XML映射文件,生成的位置（目标包）,源代码文件夹 -->
+        <sqlMapGenerator targetPackage="sqlmap" targetProject="D:\temp\dbgenerate\ruomm\resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+        <!--XML对应的Mapper类 -->
+        <javaClientGenerator type="XMLMAPPER"
+                             targetPackage="com.ruomm.dao.abst" targetProject="D:\temp\dbgenerate\ruomm\">
+            <!-- 是否对model添加 构造构造方法，构造方法包含了所有的field；而不是使用setter； -->
+            <property name="constructorBased" value="false"/>
+            <!-- 在targetPackage的基础上，根据数据库的schema再生成一层package，最终生成的类放在这个package下，默认为false -->
+            <!-- 是否允许子包，即targetPackage.schemaName.tableName -->
+            <property name="enableSubPackages" value="false"/>
+            <!-- 设置是否在getter方法中，对String类型字段调用trim()方法 -->
+            <!-- 从数据库返回的值被清理前后的空格 -->
+            <property name="trimStrings" value="false"/>
+            <property name="immutable" value="false"/>
+            <!--所有实体类继承BasePojo类-->
+        </javaClientGenerator>
+        <table tableName="TBL_VERIFY_RECORD" domainObjectName="VerifyRecord"
+               enableCountByExample="false" enableSelectByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false">
+            <!-- 主键生成方式 -->
+            <!-- <generatedKey column="ID" sqlStatement="select seq_t_user.nextval from dual" identity="true" /> -->
+        </table>
+        <table tableName="TBL_MERCHANT" domainObjectName="Merchant"
+               enableCountByExample="false" enableSelectByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false">
+            <!-- 主键生成方式 -->
+            <!-- <generatedKey column="ID" sqlStatement="select seq_t_user.nextval from dual" identity="true" /> -->
+        </table>
+
+    </context>
+
+</generatorConfiguration>

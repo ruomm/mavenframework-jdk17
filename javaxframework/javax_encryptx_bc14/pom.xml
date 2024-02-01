@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<project
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"
+        xmlns="http://maven.apache.org/POM/4.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.ruomm.javax</groupId>
+        <artifactId>javaxframework</artifactId>
+        <version>3.0.0</version>
+    </parent>
+    <artifactId>javax_encryptx_bc14</artifactId>
+    <name>javax_encryptx_bc14</name>
+    <url>http://maven.apache.org</url>
+    <dependencies>
+        <!-- fastjson -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>2.0.33</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ruomm.javax</groupId>
+            <artifactId>javax_corex</artifactId>
+        </dependency>
+        <!-- 本工具基于bcprov-jdk14、bcprov-jdk15、bcprov-jdk15on，版本号需要小于1.50-->
+        <!-- https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk14 -->
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcprov-jdk15</artifactId>
+            <version>1.46</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.15</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+</project>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.ruomm</groupId>
+        <artifactId>mavenframework</artifactId>
+        <version>3.0.0</version>
+    </parent>
+    <groupId>com.ruomm.javax</groupId>
+    <artifactId>javaxframework</artifactId>
+    <packaging>pom</packaging>
+    <name>javaxframework</name>
+    <url>http://maven.apache.org</url>
+
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+    <modules>
+        <module>javax_logcatandroidx</module>
+        <module>javax_corex</module>
+        <module>javax_basex</module>
+        <module>javax_csvx</module>
+        <module>javax_encryptx_bc14</module>
+        <module>javax_encryptx_bc15</module>
+        <module>javax_filetypex</module>
+        <module>javax_ftpx</module>
+        <module>javax_jsonx</module>
+        <module>javax_httpx</module>
+        <module>javax_objvalidatorx</module>
+        <module>javax_poix</module>
+        <module>javax_poix3</module>
+        <module>javax_propertiesx</module>
+        <module>javax_randomx</module>
+        <module>javax_swaggerx</module>
+        <module>javax_tuominx</module>
+        <module>javax_validatecodex</module>
+        <module>javax_zipx</module>
+        <module>javax_demox</module>
+    </modules>
+</project>

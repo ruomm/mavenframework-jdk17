@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<project
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"
+        xmlns="http://maven.apache.org/POM/4.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.ruomm.javax</groupId>
+        <artifactId>javaxframework</artifactId>
+        <version>3.0.0</version>
+    </parent>
+    <artifactId>javax_propertiesx</artifactId>
+    <name>javax_propertiesx</name>
+    <url>http://maven.apache.org</url>
+    <dependencies>
+        <dependency>
+            <groupId>com.ruomm.javax</groupId>
+            <artifactId>javax_corex</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.ruomm.javax</groupId>
+            <artifactId>javax_jsonx</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <!-- fastjson -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot</artifactId>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+</project>

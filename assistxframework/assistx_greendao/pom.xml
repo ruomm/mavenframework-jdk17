@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.ruomm.assistx</groupId>
+        <artifactId>assistxframework</artifactId>
+        <version>3.0.0</version>
+    </parent>
+    <artifactId>assistx_greendao</artifactId>
+    <name>assistx_greendao</name>
+    <url>http://maven.apache.org</url>
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/org.greenrobot/greendao-generator -->
+        <dependency>
+            <groupId>org.greenrobot</groupId>
+            <artifactId>greendao-generator</artifactId>
+        </dependency>
+    </dependencies>
+</project>
