@@ -4,7 +4,7 @@ import com.ruomm.javax.corex.CharsetUtils;
 import com.ruomm.javax.loggingx.Log;
 import com.ruomm.javax.loggingx.LogFactory;
 
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 import java.io.*;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;

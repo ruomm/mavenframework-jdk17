@@ -20,7 +20,7 @@ public class SpringServletHelper {
         StringBuilder sb = new StringBuilder();
         sb.append("--------依赖说明--------").append("\r\n");
 
-        sb.append("<dependency>" + "<groupId>javax.servlet</groupId>" + "<artifactId>javax.servlet-api</artifactId>"
+        sb.append("<dependency>" + "<groupId>jakarta.servlet</groupId>" + "<artifactId>jakarta.servlet-api</artifactId>"
                 + "</dependency>").append("\r\n");
 
         sb.append("--------初始化说明--------").append("\r\n");

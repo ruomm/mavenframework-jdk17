@@ -206,21 +206,24 @@
                 <version>1.18.30</version>
                 <scope>provided</scope>
             </dependency>
+            <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot</artifactId>
-                <version>2.5.6</version>
+                <version>3.2.2</version>
             </dependency>
             <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-context</artifactId>
-                <version>5.2.6.RELEASE</version>
+                <version>6.1.3</version>
             </dependency>
+            <!-- https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api -->
             <dependency>
-                <groupId>javax.servlet</groupId>
-                <artifactId>javax.servlet-api</artifactId>
-                <version>3.1.0</version>
+                <groupId>jakarta.servlet</groupId>
+                <artifactId>jakarta.servlet-api</artifactId>
+                <version>6.0.0</version>
+                <scope>provided</scope>
             </dependency>
 
             <!--日志相关jar包-->
@@ -234,33 +237,33 @@
             <dependency>
                 <groupId>org.apache.logging.log4j</groupId>
                 <artifactId>log4j-api</artifactId>
-                <version>2.20.0</version>
+                <version>2.22.1</version>
             </dependency>
             <!-- https://mvnrepository.com/artifact/commons-logging/commons-logging -->
             <dependency>
                 <groupId>commons-logging</groupId>
                 <artifactId>commons-logging</artifactId>
-                <version>1.2</version>
+                <version>1.3.0</version>
             </dependency>
             <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
             <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-api</artifactId>
-                <version>2.0.7</version>
+                <version>2.0.11</version>
             </dependency>
             <!-- fastjson -->
             <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
-                <version>2.0.33</version>
+                <version>2.0.46</version>
             </dependency>
             <!-- fastjson2 -->
             <!-- https://mvnrepository.com/artifact/com.alibaba.fastjson2/fastjson2 -->
             <dependency>
                 <groupId>com.alibaba.fastjson2</groupId>
                 <artifactId>fastjson2</artifactId>
-                <version>2.0.33</version>
+                <version>2.0.46</version>
             </dependency>
             <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
             <dependency>
@@ -274,19 +277,19 @@
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-core</artifactId>
-                <version>2.15.1</version>
+                <version>2.16.1</version>
             </dependency>
             <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-databind</artifactId>
-                <version>2.15.1</version>
+                <version>2.16.1</version>
             </dependency>
             <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations -->
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-annotations</artifactId>
-                <version>2.15.1</version>
+                <version>2.16.1</version>
             </dependency>
             <!-- https://mvnrepository.com/artifact/com.thoughtworks.xstream/xstream -->
             <dependency>
@@ -347,26 +350,26 @@
             <dependency>
                 <groupId>com.squareup.okhttp3</groupId>
                 <artifactId>okhttp</artifactId>
-                <version>4.11.0</version>
+                <version>4.12.0</version>
             </dependency>
             <!-- https://mvnrepository.com/artifact/com.squareup.okio/okio -->
             <dependency>
                 <groupId>com.squareup.okio</groupId>
                 <artifactId>okio</artifactId>
-                <version>3.3.0</version>
+                <version>3.7.0</version>
             </dependency>
             <!--office文件工具-->
             <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
             <dependency>
                 <groupId>org.apache.poi</groupId>
                 <artifactId>poi</artifactId>
-                <version>5.2.3</version>
+                <version>5.2.5</version>
             </dependency>
             <!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
             <dependency>
                 <groupId>org.apache.poi</groupId>
                 <artifactId>poi-ooxml</artifactId>
-                <version>5.2.3</version>
+                <version>5.2.5</version>
             </dependency>
 
             <!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml-schemas -->
@@ -379,7 +382,7 @@
             <dependency>
                 <groupId>org.apache.poi</groupId>
                 <artifactId>poi-excelant</artifactId>
-                <version>5.2.3</version>
+                <version>5.2.5</version>
             </dependency>
             <!--Zip文件-->
             <!-- https://mvnrepository.com/artifact/net.lingala.zip4j/zip4j -->
@@ -392,13 +395,13 @@
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
-                <version>3.12.0</version>
+                <version>3.14.0</version>
             </dependency>
             <!-- https://mvnrepository.com/artifact/commons-net/commons-net -->
             <dependency>
                 <groupId>commons-net</groupId>
                 <artifactId>commons-net</artifactId>
-                <version>3.9.0</version>
+                <version>3.10.0</version>
             </dependency>
             <!-- https://mvnrepository.com/artifact/com.jcraft/jsch -->
             <dependency>
@@ -411,31 +414,31 @@
             <dependency>
                 <groupId>org.hibernate</groupId>
                 <artifactId>hibernate-validator</artifactId>
-                <version>6.0.10.Final</version>
+                <version>8.0.1.Final</version>
             </dependency>
-            <!-- https://mvnrepository.com/artifact/javax.validation/validation-api -->
+            <!-- https://mvnrepository.com/artifact/jakarta.validation/jakarta.validation-api -->
             <dependency>
-                <groupId>javax.validation</groupId>
-                <artifactId>validation-api</artifactId>
-                <version>2.0.1.Final</version>
+                <groupId>jakarta.validation</groupId>
+                <artifactId>jakarta.validation-api</artifactId>
+                <version>3.0.2</version>
             </dependency>
             <!-- https://mvnrepository.com/artifact/com.fasterxml/classmate -->
             <dependency>
                 <groupId>com.fasterxml</groupId>
                 <artifactId>classmate</artifactId>
-                <version>1.3.4</version>
+                <version>1.7.0</version>
             </dependency>
             <!--数据库相关-->
             <!-- https://mvnrepository.com/artifact/org.greenrobot/greendao-generator -->
             <dependency>
                 <groupId>org.greenrobot</groupId>
                 <artifactId>greendao-generator</artifactId>
-                <version>3.2.2</version>
+                <version>3.3.0</version>
             </dependency>
             <dependency>
                 <groupId>org.mybatis.generator</groupId>
                 <artifactId>mybatis-generator-core</artifactId>
-                <version>1.4.0</version>
+                <version>1.4.2</version>
             </dependency>
 
         </dependencies>

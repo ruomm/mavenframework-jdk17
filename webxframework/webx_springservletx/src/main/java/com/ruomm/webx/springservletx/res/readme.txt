@@ -1,7 +1,7 @@
 --------依赖说明--------
 	<dependency>
-		<groupId>javax.servlet</groupId>
-		<artifactId>javax.servlet-api</artifactId>
+		<groupId>jakarta.servlet</groupId>
+		<artifactId>jakarta.servlet-api</artifactId>
 	</dependency>
 --------初始化说明--------
 Web容器web.xml声明com.ruomm.webx.springservletx.SpringServletFilter过滤器，并设置init-param参数configPath的路径。

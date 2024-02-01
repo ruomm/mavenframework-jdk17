@@ -5,8 +5,8 @@
  */
 package com.ruomm.webx.springservletx;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 public interface SpringServletProgress {
     public void doProgress(HttpServletRequest request, HttpServletResponse response);

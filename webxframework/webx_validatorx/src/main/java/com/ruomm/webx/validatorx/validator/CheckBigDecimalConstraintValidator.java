@@ -9,8 +9,8 @@ import com.ruomm.javax.corex.StringUtils;
 import com.ruomm.javax.loggingx.Log;
 import com.ruomm.javax.loggingx.LogFactory;
 
-import javax.validation.ConstraintValidator;
-import javax.validation.ConstraintValidatorContext;
+import jakarta.validation.ConstraintValidator;
+import jakarta.validation.ConstraintValidatorContext;
 import java.math.BigDecimal;
 
 public class CheckBigDecimalConstraintValidator implements ConstraintValidator<CheckBigDecimal, String> {

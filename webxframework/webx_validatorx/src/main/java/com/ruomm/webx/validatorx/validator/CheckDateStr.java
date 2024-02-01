@@ -5,7 +5,7 @@
  */
 package com.ruomm.webx.validatorx.validator;
 
-import javax.validation.Constraint;
+import jakarta.validation.Constraint;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -33,5 +33,5 @@ public @interface CheckDateStr {
 
     Class<?>[] groups() default {};
 
-    Class<? extends javax.validation.Payload>[] payload() default {};
+    Class<? extends jakarta.validation.Payload>[] payload() default {};
 }

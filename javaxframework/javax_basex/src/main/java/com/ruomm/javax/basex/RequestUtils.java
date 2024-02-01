@@ -5,8 +5,8 @@ import com.ruomm.javax.corex.FileUtils;
 import com.ruomm.javax.loggingx.Log;
 import com.ruomm.javax.loggingx.LogFactory;
 
-import javax.servlet.ServletContext;
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.ServletContext;
+import jakarta.servlet.http.HttpServletRequest;
 import java.io.*;
 
 /**

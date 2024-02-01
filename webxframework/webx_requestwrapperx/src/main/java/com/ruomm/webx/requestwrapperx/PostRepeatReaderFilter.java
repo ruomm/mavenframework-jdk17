@@ -9,8 +9,8 @@ import com.ruomm.javax.corex.WebUtils;
 import com.ruomm.javax.loggingx.Log;
 import com.ruomm.javax.loggingx.LogFactory;
 
-import javax.servlet.*;
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.*;
+import jakarta.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;

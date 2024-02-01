@@ -9,7 +9,7 @@ import com.ruomm.javax.corex.WebUtils;
 import com.ruomm.javax.loggingx.Log;
 import com.ruomm.javax.loggingx.LogFactory;
 
-import javax.servlet.ServletContext;
+import jakarta.servlet.ServletContext;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Unmarshaller;
 import java.io.File;

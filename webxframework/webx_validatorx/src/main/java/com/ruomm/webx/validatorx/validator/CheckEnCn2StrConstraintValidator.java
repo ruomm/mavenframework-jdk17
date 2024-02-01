@@ -7,8 +7,8 @@ package com.ruomm.webx.validatorx.validator;
 
 import com.ruomm.javax.corex.StringUtils;
 
-import javax.validation.ConstraintValidator;
-import javax.validation.ConstraintValidatorContext;
+import jakarta.validation.ConstraintValidator;
+import jakarta.validation.ConstraintValidatorContext;
 
 public class CheckEnCn2StrConstraintValidator implements ConstraintValidator<CheckEnCn2Str, String> {
     private CheckEnCn2Str validAnnotation;
