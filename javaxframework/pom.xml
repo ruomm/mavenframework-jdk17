@@ -34,6 +34,7 @@
         <module>javax_csvx</module>
         <module>javax_encryptx_bc14</module>
         <module>javax_encryptx_bc15</module>
+        <module>javax_encryptx_bc18</module>
         <module>javax_filetypex</module>
         <module>javax_ftpx</module>
         <module>javax_jsonx</module>
