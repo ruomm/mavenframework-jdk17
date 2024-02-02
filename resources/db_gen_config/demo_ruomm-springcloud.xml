@@ -7,16 +7,16 @@
 <generatorConfiguration>
     <!--数据库驱动路径 -->
     <classPathEntry
-            location="D:\SoftDevelop\MvnStore\repository\com\ruomm\orcale\ojdbc6\11.2.0.4\ojdbc6-11.2.0.4.jar"/>
+            location="/Users/qx/.m2/repository/com/mysql/mysql-connector-j/8.3.0/mysql-connector-j-8.3.0.jar"/>
     <context id="DB2Tables" targetRuntime="MyBatis3" defaultModelType="flat">
         <!--自定义插件工具-->
         <plugin type="com.ruomm.assistx.dbgenerate.parse.RuommPluginAdapter">
             <!-- 是否生成getter方法，默认true-->
-            <property name="isGetter" value="true"/>
+            <property name="isGetter" value="false"/>
             <!-- 是否生成setter方法，默认true-->
-            <property name="isSetter" value="true"/>
+            <property name="isSetter" value="false"/>
             <!-- 是否生成toString方法，默认true -->
-            <property name="isToString" value="true"/>
+            <property name="isToString" value="false"/>
             <!--是否使用自定义GeneratorHelper辅助类，空的话不使用-->
             <property name="generatorHelper" value="com.ruomm.assistx.dbgenerate.DemoGeneratorHelper"/>
         </plugin>
@@ -29,11 +29,11 @@
             <!-- 时间格式设置 -->
             <property name="dateFormat" value="yyyy-MM-dd HH:mm:ss"/>
             <!-- 是否使用lombok插件来生成getter、setter、toString方法，默认false -->
-            <property name="useLombok" value="false"/>
+            <property name="useLombok" value="true"/>
             <!-- 是否生成@Id、@Column、@Table注解，默认false -->
             <property name="dbAnnotation" value="true"/>
             <!-- 生成@Column的注解是否添加length属性，默认false -->
-            <property name="dbColumnLength" value="true"/>
+            <property name="dbColumnLength" value="false"/>
             <!-- 是否添加hibernate的@DynamicUpdate注解，默认false -->
             <property name="hibernateAnnotation" value="false"/>
             <!--是否使用自定义GeneratorHelper辅助类，空的话不使用-->
@@ -42,9 +42,9 @@
         </commentGenerator>
 
         <!--JDBC数据库连接-->
-        <jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
-                        connectionURL="jdbc:oracle:thin:@dbdev93:1521:posp"
-                        userId="ruomm" password="123456">
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+                        connectionURL="jdbc:mysql://www.ruomm.com:3306/ruommdb?characterEncoding=utf-8"
+                        userId="ruomm" password="xiaoniu123456">
             <!-- MySQL解决不同用户下相同表名的问题 -->
             <property name="nullCatalogMeansCurrent" value="true"/>
             <!--MySQL 注解启用 -->
@@ -68,7 +68,7 @@
             <property name="timeJavaMode" value="false"/>
         </javaTypeResolver>
         <!--域模型层,生成的目标包,项目目标源文件 -->
-        <javaModelGenerator targetPackage="com.ruomm.entry"
+        <javaModelGenerator targetPackage="com.ruomm.springcloud.entry"
                             targetProject=".temp_resources/db_gen">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
@@ -79,7 +79,7 @@
         </sqlMapGenerator>
         <!--XML对应的Mapper类 -->
         <javaClientGenerator type="XMLMAPPER"
-                             targetPackage="com.ruomm.dao.abst" targetProject=".temp_resources/db_gen">
+                             targetPackage="com.ruomm.springcloud.authserver.dao.abst" targetProject=".temp_resources/db_gen">
             <!-- 是否对model添加 构造构造方法，构造方法包含了所有的field；而不是使用setter； -->
             <property name="constructorBased" value="false"/>
             <!-- 在targetPackage的基础上，根据数据库的schema再生成一层package，最终生成的类放在这个package下，默认为false -->
@@ -91,13 +91,13 @@
             <property name="immutable" value="false"/>
             <!--所有实体类继承BasePojo类-->
         </javaClientGenerator>
-        <table tableName="TBL_VERIFY_RECORD" domainObjectName="VerifyRecord"
+        <table tableName="tbl_users" domainObjectName="UserEntity"
                enableCountByExample="false" enableSelectByExample="false"
                enableUpdateByExample="false" enableDeleteByExample="false">
             <!-- 主键生成方式 -->
             <!-- <generatedKey column="ID" sqlStatement="select seq_t_user.nextval from dual" identity="true" /> -->
         </table>
-        <table tableName="TBL_MERCHANT" domainObjectName="Merchant"
+        <table tableName="tbl_messages" domainObjectName="MessageEntity"
                enableCountByExample="false" enableSelectByExample="false"
                enableUpdateByExample="false" enableDeleteByExample="false">
             <!-- 主键生成方式 -->
