@@ -34,6 +34,8 @@
             <property name="dbAnnotation" value="true"/>
             <!-- 生成@Column的注解是否添加length属性，默认false -->
             <property name="dbColumnLength" value="false"/>
+            <!-- 生成@Column的注解是否添加nullable属性，默认false -->
+            <property name="dbColumnNullable" value="false"/>
             <!-- 是否添加hibernate的@DynamicUpdate注解，默认false -->
             <property name="hibernateAnnotation" value="false"/>
             <!--是否使用自定义GeneratorHelper辅助类，空的话不使用-->
@@ -97,7 +99,13 @@
             <!-- 主键生成方式 -->
             <!-- <generatedKey column="ID" sqlStatement="select seq_t_user.nextval from dual" identity="true" /> -->
         </table>
-        <table tableName="tbl_messages" domainObjectName="MessageEntity"
+        <table tableName="tbl_msg_content" domainObjectName="MsgContentEntity"
+               enableCountByExample="false" enableSelectByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false">
+            <!-- 主键生成方式 -->
+            <!-- <generatedKey column="ID" sqlStatement="select seq_t_user.nextval from dual" identity="true" /> -->
+        </table>
+        <table tableName="tbl_msg_template" domainObjectName="MsgTemplateEntity"
                enableCountByExample="false" enableSelectByExample="false"
                enableUpdateByExample="false" enableDeleteByExample="false">
             <!-- 主键生成方式 -->

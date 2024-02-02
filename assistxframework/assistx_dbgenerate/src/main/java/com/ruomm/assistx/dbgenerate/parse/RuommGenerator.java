@@ -355,10 +355,12 @@ public class RuommGenerator implements CommentGenerator {
         sb.append(introspectedColumn.getJdbcTypeName());
         sb.append(", length: ");
         sb.append(introspectedColumn.getLength());
-        if (dbColumnNullable) {
-            sb.append(", nullable: ");
-            sb.append(introspectedColumn.isNullable());
-        }
+//        if (dbColumnNullable) {
+//            sb.append(", nullable: ");
+//            sb.append(introspectedColumn.isNullable());
+//        }
+        sb.append(", nullable: ");
+        sb.append(introspectedColumn.isNullable());
         field.addJavaDocLine(sb.toString()); //$NON-NLS-1$
         // 添加remarks注释
         sb.setLength(0);
