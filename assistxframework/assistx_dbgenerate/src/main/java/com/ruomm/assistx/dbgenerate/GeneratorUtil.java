@@ -35,9 +35,9 @@ public class GeneratorUtil {
         String configXmlPath = null;
         if (FileUtils.lastIndexOfFileSeparator(configXml) < 0) {
             if (configXml.toLowerCase().endsWith(".xml")) {
-                configXmlPath = WebUtils.parseRealPathForIdea(WebUtils.PATH_TAG_USERDIR + "src/main/java/resource/" + configXml, "assistx_dbgenerate");
+                configXmlPath = WebUtils.parseRealPathForIdea(WebUtils.PATH_TAG_USERDIR + "assistxframework/assistx_dbgenerate/src/main/java/resource/" + configXml, "assistx_dbgenerate");
             } else {
-                configXmlPath = WebUtils.parseRealPathForIdea(WebUtils.PATH_TAG_USERDIR + "src/main/java/resource/" + configXml + ".xml", "assistx_dbgenerate");
+                configXmlPath = WebUtils.parseRealPathForIdea(WebUtils.PATH_TAG_USERDIR + "assistxframework/assistx_dbgenerate/src/main/java/resource/" + configXml + ".xml", "assistx_dbgenerate");
             }
         } else {
             configXmlPath = WebUtils.parseRealPathForIdea(configXml, "assistx_dbgenerate");

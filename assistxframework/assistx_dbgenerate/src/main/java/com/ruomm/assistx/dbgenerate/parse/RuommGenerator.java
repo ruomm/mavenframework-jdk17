@@ -261,7 +261,10 @@ public class RuommGenerator implements CommentGenerator {
                                      IntrospectedTable introspectedTable) {
         // 使用配置文件添加自定义引用
         if (useLombok) {
-            topLevelClass.addImportedType("lombok.Data");
+//            topLevelClass.addImportedType("lombok.Data");
+            topLevelClass.addImportedType("lombok.Getter");
+            topLevelClass.addImportedType("lombok.Setter");
+            topLevelClass.addImportedType("lombok.ToString");
         }
         if (dbAnnotation) {
             topLevelClass.addImportedType("javax.persistence.*");
@@ -295,7 +298,10 @@ public class RuommGenerator implements CommentGenerator {
             topLevelClass.addAnnotation("@Entity");
         }
         if (useLombok) {
-            topLevelClass.addAnnotation("@Data");
+//            topLevelClass.addAnnotation("@Data");
+            topLevelClass.addAnnotation("@Getter");
+            topLevelClass.addAnnotation("@Setter");
+            topLevelClass.addAnnotation("@ToString");
         }
         if (hibernateAnnotation) {
             topLevelClass.addAnnotation("@DynamicUpdate");
