@@ -7,7 +7,7 @@
     <parent>
         <groupId>com.ruomm.webx</groupId>
         <artifactId>webxframework</artifactId>
-        <version>3.0.0</version>
+        <version>3.0.2</version>
     </parent>
     <artifactId>webx_requestwrapperx</artifactId>
     <name>webx_requestwrapperx</name>

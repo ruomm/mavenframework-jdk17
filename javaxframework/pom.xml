@@ -5,7 +5,7 @@
     <parent>
         <groupId>com.ruomm</groupId>
         <artifactId>mavenframework</artifactId>
-        <version>3.0.0</version>
+        <version>3.0.2</version>
     </parent>
     <groupId>com.ruomm.javax</groupId>
     <artifactId>javaxframework</artifactId>

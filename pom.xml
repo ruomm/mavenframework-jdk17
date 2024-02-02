@@ -7,7 +7,7 @@
     <groupId>com.ruomm</groupId>
     <artifactId>mavenframework</artifactId>
     <packaging>pom</packaging>
-    <version>3.0.0</version>
+    <version>3.0.2</version>
     <modules>
         <module>javaxframework</module>
         <module>webxframework</module>
@@ -27,7 +27,7 @@
         </snapshotRepository>
     </distributionManagement>
     <properties>
-        <ruomm_javax_version>3.0.0</ruomm_javax_version>
+        <ruomm_javax_version>3.0.2</ruomm_javax_version>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <maven.compiler.encoding>UTF-8</maven.compiler.encoding>

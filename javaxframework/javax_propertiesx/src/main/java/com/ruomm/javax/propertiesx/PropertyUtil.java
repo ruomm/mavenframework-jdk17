@@ -148,7 +148,7 @@ public class PropertyUtil {
                     Class<?> cls = tmpField.getType();
                     if (null != readType && READER_TYPE_TIME.equalsIgnoreCase(readType)
                             && (cls == long.class || cls == Long.class)) {
-                        Long TimeMillis = parseStrToTimeMillis(tmpReaderValue, 0l);
+                        Long TimeMillis = parseStrToTimeMillis(tmpReaderValue, 0l,true);
                         if (cls == long.class) {
                             tmpField.set(t, (long) TimeMillis);
                         } else {
@@ -233,28 +233,37 @@ public class PropertyUtil {
     }
 
     // 转换字符串为毫秒
-    private static Long parseStrToTimeMillis(String timeStr, Long defaultMillis) {
-        if (null == timeStr || timeStr.length() <= 0) {
+    private static Long parseStrToTimeMillis(String timeStr, Long defaultMillis, boolean secondMode) {
+        if (StringUtils.isEmpty(timeStr)) {
             return defaultMillis;
         }
         Long value = null;
         try {
-            if (timeStr.toLowerCase().endsWith("s")) {
-                value = Long.valueOf(timeStr.substring(0, timeStr.length() - 1)) * 1000;
-            } else if (timeStr.toLowerCase().endsWith("m")) {
-                value = Long.valueOf(timeStr.substring(0, timeStr.length() - 1)) * 1000 * 60;
-            } else if (timeStr.toLowerCase().endsWith("h")) {
-                value = Long.valueOf(timeStr.substring(0, timeStr.length() - 1)) * 1000 * 3600;
-            } else if (timeStr.toLowerCase().endsWith("d")) {
-                value = Long.valueOf(timeStr.substring(0, timeStr.length() - 1)) * 1000 * 3600 * 24;
-            } else if (timeStr.toLowerCase().endsWith("w")) {
-                value = Long.valueOf(timeStr.substring(0, timeStr.length() - 1)) * 1000 * 3600 * 24 * 7;
-            } else if (timeStr.toLowerCase().endsWith("mon")) {
-                value = Long.valueOf(timeStr.substring(0, timeStr.length() - 3)) * 1000 * 3600 * 24 * 30;
-            } else if (timeStr.toLowerCase().endsWith("y")) {
-                value = Long.valueOf(timeStr.substring(0, timeStr.length() - 1)) * 1000 * 3600 * 365;
+            Double doubleVal = null;
+            String timeStrLower = timeStr.trim().toLowerCase();
+            if (timeStrLower.endsWith("ms")) {
+                doubleVal = Double.valueOf(timeStrLower.substring(0, timeStrLower.length() - 1).trim());
+            } else if (timeStrLower.endsWith("s")) {
+                doubleVal = Double.valueOf(timeStrLower.substring(0, timeStrLower.length() - 1).trim()) * 1000;
+            } else if (timeStrLower.endsWith("m")) {
+                doubleVal = Double.valueOf(timeStrLower.substring(0, timeStrLower.length() - 1).trim()) * 1000 * 60;
+            } else if (timeStrLower.endsWith("h")) {
+                doubleVal = Double.valueOf(timeStrLower.substring(0, timeStrLower.length() - 1).trim()) * 1000 * 3600;
+            } else if (timeStrLower.endsWith("d")) {
+                doubleVal = Double.valueOf(timeStrLower.substring(0, timeStrLower.length() - 1).trim()) * 1000 * 3600 * 24;
+            } else if (timeStrLower.endsWith("w")) {
+                doubleVal = Double.valueOf(timeStrLower.substring(0, timeStrLower.length() - 1).trim()) * 1000 * 3600 * 24 * 7;
+            } else if (timeStrLower.endsWith("mon")) {
+                doubleVal = Double.valueOf(timeStrLower.substring(0, timeStrLower.length() - 3).trim()) * 1000 * 3600 * 24 * 30;
+            } else if (timeStrLower.endsWith("y")) {
+                doubleVal = Double.valueOf(timeStrLower.substring(0, timeStrLower.length() - 1).trim()) * 1000 * 3600 * 24 * 365;
+            } else if (secondMode) {
+                doubleVal = Double.valueOf(timeStrLower.trim()) * 1000;
             } else {
-                value = Long.valueOf(timeStr.substring(0, timeStr.length() - 1)) * 1000;
+                doubleVal = Double.valueOf(timeStrLower.trim());
+            }
+            if (null != doubleVal) {
+                value = (long) (doubleVal + 0.5);
             }
         } catch (Exception e) {
             value = null;

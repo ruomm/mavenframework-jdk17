@@ -325,7 +325,7 @@ public class TimeUtils {
     }
 
     // 转换字符串为毫秒
-    public static Long parseStrToTimeMillis(String timeStr, Long defaultMillis) {
+    public static Long parseStrToTimeMillis(String timeStr, Long defaultMillis, boolean secondMode) {
         if (StringUtils.isEmpty(timeStr)) {
             return defaultMillis;
         }
@@ -333,7 +333,9 @@ public class TimeUtils {
         try {
             Double doubleVal = null;
             String timeStrLower = timeStr.trim().toLowerCase();
-            if (timeStrLower.endsWith("s")) {
+            if (timeStrLower.endsWith("ms")) {
+                doubleVal = Double.valueOf(timeStrLower.substring(0, timeStrLower.length() - 1).trim());
+            } else if (timeStrLower.endsWith("s")) {
                 doubleVal = Double.valueOf(timeStrLower.substring(0, timeStrLower.length() - 1).trim()) * 1000;
             } else if (timeStrLower.endsWith("m")) {
                 doubleVal = Double.valueOf(timeStrLower.substring(0, timeStrLower.length() - 1).trim()) * 1000 * 60;
@@ -347,8 +349,10 @@ public class TimeUtils {
                 doubleVal = Double.valueOf(timeStrLower.substring(0, timeStrLower.length() - 3).trim()) * 1000 * 3600 * 24 * 30;
             } else if (timeStrLower.endsWith("y")) {
                 doubleVal = Double.valueOf(timeStrLower.substring(0, timeStrLower.length() - 1).trim()) * 1000 * 3600 * 24 * 365;
-            } else {
+            } else if (secondMode) {
                 doubleVal = Double.valueOf(timeStrLower.trim()) * 1000;
+            } else {
+                doubleVal = Double.valueOf(timeStrLower.trim());
             }
             if (null != doubleVal) {
                 value = (long) (doubleVal + 0.5);
@@ -359,6 +363,50 @@ public class TimeUtils {
         }
         if (value == null) {
             return defaultMillis;
+        } else {
+            return value;
+        }
+    }
+
+    // 转换字符串为秒
+    public static Long parseStrToTimeSeconds(String timeStr, Long defaultSeconds, boolean secondMode) {
+        if (StringUtils.isEmpty(timeStr)) {
+            return defaultSeconds;
+        }
+        Long value = null;
+        try {
+            Double doubleVal = null;
+            String timeStrLower = timeStr.trim().toLowerCase();
+            if (timeStrLower.endsWith("ms")) {
+                doubleVal = Double.valueOf(timeStrLower.substring(0, timeStrLower.length() - 1).trim()) / 1000;
+            } else if (timeStrLower.endsWith("s")) {
+                doubleVal = Double.valueOf(timeStrLower.substring(0, timeStrLower.length() - 1).trim());
+            } else if (timeStrLower.endsWith("m")) {
+                doubleVal = Double.valueOf(timeStrLower.substring(0, timeStrLower.length() - 1).trim()) * 60;
+            } else if (timeStrLower.endsWith("h")) {
+                doubleVal = Double.valueOf(timeStrLower.substring(0, timeStrLower.length() - 1).trim()) * 3600;
+            } else if (timeStrLower.endsWith("d")) {
+                doubleVal = Double.valueOf(timeStrLower.substring(0, timeStrLower.length() - 1).trim()) * 3600 * 24;
+            } else if (timeStrLower.endsWith("w")) {
+                doubleVal = Double.valueOf(timeStrLower.substring(0, timeStrLower.length() - 1).trim()) * 3600 * 24 * 7;
+            } else if (timeStrLower.endsWith("mon")) {
+                doubleVal = Double.valueOf(timeStrLower.substring(0, timeStrLower.length() - 3).trim()) * 3600 * 24 * 30;
+            } else if (timeStrLower.endsWith("y")) {
+                doubleVal = Double.valueOf(timeStrLower.substring(0, timeStrLower.length() - 1).trim()) * 3600 * 24 * 365;
+            } else if (secondMode) {
+                doubleVal = Double.valueOf(timeStrLower.trim());
+            } else {
+                doubleVal = Double.valueOf(timeStrLower.trim()) / 1000;
+            }
+            if (null != doubleVal) {
+                value = (long) (doubleVal + 0.5);
+            }
+        } catch (Exception e) {
+            value = null;
+            log.error("Error:parseStrToTimeMillis", e);
+        }
+        if (value == null) {
+            return defaultSeconds;
         } else {
             return value;
         }

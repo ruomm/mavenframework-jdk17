@@ -80,7 +80,7 @@ public class CheckDateStrConstraintValidator implements ConstraintValidator<Chec
         if (StringUtils.isEmpty(dateStrAnnotation.after())) {
             return true;
         }
-        Long offsetTime = TimeUtils.parseStrToTimeMillis(dateStrAnnotation.after(), null);
+        Long offsetTime = TimeUtils.parseStrToTimeMillis(dateStrAnnotation.after(), null,true);
         if (null == offsetTime) {
             return false;
         }
@@ -107,7 +107,7 @@ public class CheckDateStrConstraintValidator implements ConstraintValidator<Chec
         if (StringUtils.isEmpty(dateStrAnnotation.before())) {
             return true;
         }
-        Long offsetTime = TimeUtils.parseStrToTimeMillis(dateStrAnnotation.before(), null);
+        Long offsetTime = TimeUtils.parseStrToTimeMillis(dateStrAnnotation.before(), null,true);
         if (null == offsetTime) {
             return false;
         }

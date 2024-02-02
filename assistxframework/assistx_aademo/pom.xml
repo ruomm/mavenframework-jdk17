@@ -7,7 +7,7 @@
     <parent>
         <groupId>com.ruomm.assistx</groupId>
         <artifactId>assistxframework</artifactId>
-        <version>3.0.0</version>
+        <version>3.0.2</version>
     </parent>
     <artifactId>assistx_aademo</artifactId>
     <name>assistx_aademo</name>

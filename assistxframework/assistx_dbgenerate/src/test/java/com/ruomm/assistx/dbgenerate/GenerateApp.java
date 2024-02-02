@@ -7,7 +7,7 @@ public class GenerateApp {
     public static void main(String[] args) {
         // 加载配置文件生成DB相关类和Mapper示例代码
 //         generateDbResorceDemo(2);
-        GeneratorUtil.generateDbResorce("resources/db_gen_config/demo_ruomm-springcloud.xml");
+        GeneratorUtil.generateDbResorce("resources/db_gen_config/demo_ruomm-springcloud_win.xml");
     }
 
     // 加载配置文件生成DB相关类和Mapper示例代码
