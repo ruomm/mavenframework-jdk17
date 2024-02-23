@@ -9,7 +9,7 @@
 <!--    <classPathEntry-->
 <!--            location="/Users/qx/.m2/repository/com/mysql/mysql-connector-j/8.3.0/mysql-connector-j-8.3.0.jar"/>-->
     <classPathEntry
-            location="D:\\SoftDevelop\\MvnStore\\repository\\com\\mysql\\mysql-connector-j\\8.3.0\\mysql-connector-j-8.3.0.jar"/>
+            location="D:\SoftDevelop\MvnStore\repository\com\mysql\mysql-connector-j\8.3.0\mysql-connector-j-8.3.0.jar"/>
     <context id="DB2Tables" targetRuntime="MyBatis3" defaultModelType="flat">
         <!--自定义插件工具-->
         <plugin type="com.ruomm.assistx.dbgenerate.parse.RuommPluginAdapter">

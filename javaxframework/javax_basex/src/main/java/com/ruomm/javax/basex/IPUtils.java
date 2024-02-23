@@ -22,31 +22,49 @@ public class IPUtils {
      * @param request HttpServletRequest请求
      * @return ip地址
      */
-    public static String getRequestIP(HttpServletRequest request) {
-        String ip = null;
-
-        try {
-            ip = request.getHeader("x-forwarded-for");
-            String localIP = "127.0.0.1";
-            if ((ip == null) || (ip.length() == 0) || (ip.equalsIgnoreCase(localIP))
-                    || "unknown".equalsIgnoreCase(ip)) {
-                ip = request.getHeader("Proxy-Client-IP");
+    public static String getRequestIP(HttpServletRequest request, String... proxyIpHeaderKeys) {
+        //X-Forwarded-For：Squid 服务代理
+        //Proxy-Client-IP：apache 服务代理
+        //WL-Proxy-Client-IP：weblogic 服务代理
+        //HTTP_CLIENT_IP：有些代理服务器
+        //HTTP_X_FORWARDED_FOR：有些代理服务器
+        //X-Real-IP：nginx服务代理
+        String ipAddresses = null;
+        String localIP = "127.0.0.1";
+        String[] realIpHeaderKyes = null != proxyIpHeaderKeys && proxyIpHeaderKeys.length > 0 ? proxyIpHeaderKeys : new String[]{
+                "X-Forwarded-For", "Proxy-Client-IP", "WL-Proxy-Client-IP", "HTTP_CLIENT_IP", "X-Real-IP","HTTP_X_FORWARDED_FOR"
+        };
+        for (String ipHeaderKey : realIpHeaderKyes) {
+            if (null == ipHeaderKey || ipHeaderKey.length() <= 0) {
+                continue;
             }
-
-            if ((ip == null) || (ip.length() == 0) || (ip.equalsIgnoreCase(localIP))
-                    || "unknown".equalsIgnoreCase(ip)) {
-                ip = request.getHeader("WL-Proxy-Client-IP");
+            try {
+                ipAddresses = request.getHeader(ipHeaderKey);
+            } catch (Exception e) {
+                ipAddresses = null;
+                log.error("Error:getRequestIP", e);
             }
-
-            if ((ip == null) || (ip.length() == 0) || (ip.equalsIgnoreCase(localIP))
-                    || "unknown".equalsIgnoreCase(ip)) {
-                ip = request.getRemoteAddr();
+            if (ipAddresses != null && ipAddresses.length() > 0 && !"unknown".equalsIgnoreCase(ipAddresses) && !ipAddresses.equalsIgnoreCase(localIP)) {
+                break;
             }
-        } catch (Exception e) {
-            ip = null;
-            log.error("Error:getRequestIP", e);
         }
-
+        String ip = null;
+        //有些网络通过多层代理，那么获取到的ip就会有多个，一般都是通过逗号（,）分割开来，并且第一个ip为客户端的真实IP
+        if (ipAddresses != null && ipAddresses.length() != 0) {
+            ip = ipAddresses.split(",")[0];
+        }
+        //还是不能获取到，最后再通过request.getRemoteAddr();
+        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip) || ip.equalsIgnoreCase(localIP)) {
+            try {
+                ip = request.getRemoteAddr();
+            } catch (Exception e) {
+                ip = null;
+                log.error("Error:getRequestIP", e);
+            }
+        }
+        if (null == ip || ip.length()<=0){
+            ip = "unknown";
+        }
         return ip;
     }
 
