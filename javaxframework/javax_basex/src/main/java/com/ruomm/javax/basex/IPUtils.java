@@ -62,9 +62,9 @@ public class IPUtils {
                 log.error("Error:getRequestIP", e);
             }
         }
-        if (null == ip || ip.length()<=0){
-            ip = "unknown";
-        }
+//        if (null == ip || ip.length()<=0){
+//            ip = "unknown";
+//        }
         return ip;
     }
 
